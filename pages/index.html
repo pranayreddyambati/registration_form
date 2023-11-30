@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="website_icon" href="../public/icons/logo.png">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans:wght@300&family=Poppins:wght@500&display=swap');
+
+        :root {
+            --primary-color: blue;
+            --secondary-color: white;
+            --terinary-color: rgb(255, 132, 0);
+            --background-color: #f6f6f9;
+        }
+
+        html {
+            background: var(--background-color);
+            display: flex;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .center {
+            height: 30rem;
+            width: 50rem;
+            margin: 2rem 0rem;
+            background-color: var(--secondary-color);
+            position: relative;
+            border-radius: 1.5rem;
+            box-shadow: rgba(149, 157, 165, 0.405) 0px 8px 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .right > h1 {
+            display: flex;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        .image{
+            padding-left: 2rem;
+            height: 16rem;
+            width: 13rem;
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            padding: 0.3rem 1.5rem;
+            gap: 0.3rem;
+        }
+
+        .input-box > input {
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 0.025rem solid rgba(0, 0, 0, 0.219);
+        }
+
+        #dual-box {
+            display: flex;
+            padding: 0.5rem 1.5rem;
+        }
+
+        #dual-box > .input-box:first-child {
+            padding:0;
+            padding-right: 0.25rem;
+        }
+
+        #dual-box > .input-box:last-child {
+            padding:0;
+            padding-left: 0.25rem;
+            width: 100%;
+        }
+
+        .gender-box {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            border: 0.05rem solid transparent;
+            border-radius: 0.25rem;
+            margin-top: 0.5rem;
+            transition-duration: 0.2s;
+            color: var(--secondary-color);
+            background-color: var(--terinary-color);
+            font-weight: bolder;
+        }
+
+        button:hover {
+            color: var(--terinary-color);
+            background-color: var(--secondary-color);
+            border: 0.1rem solid var(--terinary-color);
+        }
+
+        .input-box > p {
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <div class="center">
+
+        <div class="left box">
+            <img class="image" src="../public/images/sign_up.jpg" alt="sign_up image">
+        </div>
+
+        <div class="right box">
+
+            <h1>Registration Form</h1>
+
+            <form action="/register" method="post" id="registrationForm">
+
+                <div id="dual-box">
+                    <div class="input-box">                 
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    </div>
+                    
+                    <div class="input-box">                 
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="input-box">                 
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+
+                <div id="dual-box">
+                    <div class="input-box">                 
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                    
+                </div>
+
+                <div class="input-box">
+                    <p id="passwordError" style="color: red;"></p>
+                </div>
+
+                <div class="input-box">
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                document.getElementById('passwordError').textContent = 'Passwords do not match.';
+                event.preventDefault();
+            } else {
+                document.getElementById('passwordError').textContent = '';
+            }
+        });
+    </script>
+
+</body>
+</html>

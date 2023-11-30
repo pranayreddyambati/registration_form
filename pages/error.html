@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="website_icon" href="../public/icons/logo.png">
+    <title>Registration Failed</title>
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans:wght@300&family=Poppins:wght@500&display=swap');
+
+        :root {
+            --primary-color: blue;
+            --secondary-color: white;
+            --terinary-color: rgb(255, 132, 0);
+            --background-color: #f6f6f9;
+        }
+
+        html {
+            background: var(--background-color);
+            display: flex;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .center {
+            height: 30rem;
+            width: 50rem;
+            margin: 2rem 0rem;
+            background-color: var(--secondary-color);
+            position: relative;
+            border-radius: 1.5rem;
+            box-shadow: rgba(149, 157, 165, 0.405) 0px 8px 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right > h1 {
+            display: flex;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        .image{
+            padding-left: 2rem;
+            height: 16rem;
+            width: 13rem;
+        }
+
+    </style>
+
+    <div class="center">
+
+        <div class="left box">
+            <img class="image" src="../public/images/Registered.jpg" alt="sign_up image">
+        </div>
+
+        <div class="right box">
+
+            <h1>Registration Failed</h1>
+            <h3>Already registered with same email.</h3>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>
