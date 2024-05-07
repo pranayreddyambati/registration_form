@@ -22,7 +22,7 @@ The Registration Form project allows users to register with their first name, la
   const dotenv = require("dotenv");
 ```
 
-##Setup
+## Setup
 1. Clone the repository:
 ```bash
 git clone <repository_url>
@@ -39,13 +39,13 @@ PORT=<port_number>
 MONGODB_USERNAME=<mongodb_username>
 MONGODB_PASSWORD=<mongodb_password>
 ```
-##Running the Application
+## Running the Application
 ```bash
 npm start
 ```
 The server will start running on the specified port.
 
-##API Endpoints
+## API Endpoints
 ```javascript
 const app = express();
 
@@ -61,7 +61,7 @@ app.get("/error", (req, res) => {
     // Error page logic
 });
 ```
-##Contributing
+## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your enhancements or bug fixes.
 
 
